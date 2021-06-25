@@ -1,0 +1,18 @@
+{%  extends 'base.html' %}
+ {% block title %} Anime List {%  endblock %}
+{% block content %}
+
+<h1><b>List of Ghibli Studio Animes</b> </h1>
+<a href="https://ghibliapi.herokuapp.com/">API</a>
+<br>
+<br>
+{% for each in records: %}
+<div>
+    <h2><b>Title: {% print(each)[1] %}</b></h2>
+    <h4>Director: {% print(each)[3] %}; Release Year: {% print(each)[4] %}; Run Time: {% print(each)[5] %}</h4>
+    <p>{% print(each)[2] %}</p>
+    <br>
+</div>
+{% endfor %}
+{% endblock %}
+

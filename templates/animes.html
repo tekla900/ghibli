@@ -1,0 +1,28 @@
+
+
+{%  extends 'base.html' %}
+ {% block title %} Home page {%  endblock %}
+
+{% block content %}
+
+
+<br>
+<h3>ანიმეს დამატება</h3>
+    <form method="post" style="width:50%; margin-left: 10px">
+      <div class="form-group">
+        <input type="text" name="title" class="form-control" placeholder="Anime Title"><br>
+        <input type="text" name="director" class="form-control" placeholder="Director"><br>
+        <input type="text" name="release date" class="form-control" placeholder="Release Date"><br>
+        <input type="text" name="run time" class="form-control" placeholder="Run Time"><br>
+        <input type="text" name="description" class="form-control"  placeholder="Description"><br>
+      </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% for cat, msg in messages %}
+                <p class="{{cat}}">{{msg}}</p>
+            {% endfor %}
+        {% endwith %}
+
+    <button type="submit" class="btn btn-primary">Add Anime to Database</button>
+    </form>
+{% endblock %}
